@@ -96,7 +96,10 @@ class Thumbnail extends React.Component{
             <Grid  container direction="column" justify="center" alignItems="center">
                 <Grid item className="topBorderRound"  xs={4} md={3}>
                 <p>{this.props.tmbdata.title}</p>
-                    <a href={this.props.tmbdata.previewData.url}><img id="postimg" src={this.props.tmbdata.previewData.img}/></a>                  
+                <Tooltip title='Click to go to youtube' placement="top">
+                    <a href={this.props.tmbdata.previewData.url}>
+                        <img id="postimg" src={this.props.tmbdata.previewData.img} style={{borderTopLeftRadius: '5px' , borderTopRightRadius: '5px'}}/></a> 
+                    </Tooltip>                 
                 </Grid>
                 <Grid item id="cardFooter" item xs={4} md={3}>
                     <Grid container direction="row" justify="center" alignItems="center" >
