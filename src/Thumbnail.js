@@ -2,6 +2,7 @@ import React from 'react';
 import './Thumbnail.css';
 import Grid from '@material-ui/core/Grid';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import Tooltip from '@material-ui/core/Tooltip';
 import PopIcon from './PopIcon'
 import IntelIcon from './IntelIcon'
 import FunnyIcon from './FunnyIcon'
@@ -101,11 +102,13 @@ class Thumbnail extends React.Component{
                     <Grid container direction="row" justify="center" alignItems="center" >
                            <Grid item xs={4} md={4}>
                                <Grid container direction="row"  justify="center" alignItems="center" spacing={2}>
+                                   <Tooltip title="Popularity" placement="bottom">
                                    <Grid item xs={4} md={4}>
                                         <KeyboardArrowUpIcon onClick={this.onPopUpvote} style={{color: (this.state.popUpvote ? "green" : "white")}}/>
                                         <PopIcon/>
                                         <KeyboardArrowDownIcon onClick={this.onPopDownVote} style={{color: (this.state.popDownvote ? "red" : "white") }}/>
                                     </Grid>
+                                    </Tooltip>
                                     <Grid item>
                                        <Sextile sextileWeight= {Math.round(this.state.popularity)} colorValue={this.props.tmbdata.sextiles.popularity}/>
                                     </Grid>
@@ -113,11 +116,13 @@ class Thumbnail extends React.Component{
                            </Grid>
                            <Grid item xs={4} md={4}>
                            <Grid container direction="row"   justify="center" alignItems="center" spacing={2}>
+                           <Tooltip title="Intelligence" placement="bottom">
                                    <Grid item xs={4} md={4}>
                                         <KeyboardArrowUpIcon onClick={this.onIntelUpvote}  style={{color: (this.state.intelUpvote ? "green" : "white")}} />
                                         <IntelIcon/>
                                         <KeyboardArrowDownIcon onClick={this.onIntelDownVote} style={{color: (this.state.intelDownvote ? "red" : "white") }}/>
                                     </Grid>
+                                    </Tooltip>
                                     <Grid item>
                                         <Sextile sextileWeight= {Math.round(this.state.intelligence)} colorValue={this.props.tmbdata.sextiles.intelligence}/>
                                     </Grid>
@@ -125,11 +130,13 @@ class Thumbnail extends React.Component{
                             </Grid>
                            <Grid item xs={4} md={4}>
                            <Grid container direction="row"  justify="center" alignItems="center" spacing={2}>
+                           <Tooltip title="Funny" placement="bottom">
                                    <Grid item xs={4} md={4}>
                                         <KeyboardArrowUpIcon onClick={this.onFunnyUpvote}  style={{color: (this.state.funnyUpvote ? "green" : "white")}} />
                                         <FunnyIcon/>
                                         <KeyboardArrowDownIcon onClick={this.onFunnyDownVote} style={{color: (this.state.funnyDownvote ? "red" : "white") }} />
                                     </Grid>
+                                    </Tooltip>
                                     <Grid item>
                                         <Sextile sextileWeight= {Math.round(this.state.funny)} colorValue={this.props.tmbdata.sextiles.funny}/>
                                     </Grid>
