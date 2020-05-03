@@ -14,7 +14,7 @@ const levelColors = {
 class Sextile extends React.Component{
 
     render(){
-       return <u style={{color: levelColors[this.props.colorValue]}}>{Math.round(this.props.sextileWeight)}</u>
+       return <p style={{borderBottom: "solid 3px" + levelColors[this.props.colorValue]}}>{this.props.sextileWeight}</p>
     }
 }
 
